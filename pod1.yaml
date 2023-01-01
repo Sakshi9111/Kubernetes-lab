@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod              #type of K8s object: Pod
+metadata: 
+  name: firstpod       #name of Pod
+  labels:
+    app: frontend      #label Pod with "app:frontend"
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest  #image name:image version,nginx downloads from dockerhub
+    ports:
+    - containerPort: 80  #open ports on container
+    env: 
+      - name: USER
+        value: "username"
+
+   
